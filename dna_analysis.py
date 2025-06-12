@@ -94,6 +94,14 @@ total_count = 0
 # Number of G and C nucleotides seen so far.
 gc_count = 0
 at_count = 0
+a_count = 0
+c_count = 0
+t_count = 0
+g_count = 0
+sum_counts= 0
+length_of_nucleotides = 0
+ratio=0
+level_gc= ""
 
 for base in nucleotides:
     total_count = total_count + 1
@@ -103,12 +111,40 @@ for base in nucleotides:
         gc_count = gc_count + 1
     if base == 'A' or base == 'T':
         at_count = at_count + 1
+    if base == 'C':
+        c_count = c_count + 1
+    if base == 'A':
+        a_count= a_count+1
+    if base=="G":
+        g_count= g_count+1
+    if base== 'T':
+        t_count=t_count+1
+    
+
 
 gc_content = gc_count / total_count
 at_content = at_count / total_count
+sum_counts= t_count +a_count +g_count+c_count
+ratio= at_content/gc_content
+if gc_content>0.55:
+    level_gc= "high GC content"
+elif gc_content<0.37:
+    level_gc= "low GC content"
+else:
+    level_gc= "moderate GC content"
+
 
 print('GC-content:', gc_content)
 print('AT-content:', at_content)
+print('G count:', g_count)
+print('A count:', a_count)
+print('C count:', c_count)
+print('T count:', t_count)
+print('Sum of G+C+A+T counts:',sum_counts)
+print('Total count:',total_count)
+print('Length of nucleotides:',)
+print('AT/GC Ratio:',ratio)
+print('GC Classification:',level_gc)
 
 # You can add more assertions here to check properties that you think
 # should be true about your results. If the condition listed is false,
