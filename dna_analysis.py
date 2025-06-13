@@ -119,7 +119,7 @@ for base in nucleotides:
         g_count= g_count+1
     if base== 'T':
         t_count=t_count+1
-    
+length_of_nucleotides = len(nucleotides)
 
 
 gc_content = gc_count / total_count
@@ -134,6 +134,7 @@ else:
     level_gc= "moderate GC content"
 
 
+
 print('GC-content:', gc_content)
 print('AT-content:', at_content)
 print('G count:', g_count)
@@ -142,7 +143,7 @@ print('C count:', c_count)
 print('T count:', t_count)
 print('Sum of G+C+A+T counts:',sum_counts)
 print('Total count:',total_count)
-print('Length of nucleotides:',)
+print('Length of nucleotides:',length_of_nucleotides)
 print('AT/GC Ratio:',ratio)
 print('GC Classification:',level_gc)
 
